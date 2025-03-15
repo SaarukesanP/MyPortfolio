@@ -1,15 +1,9 @@
-import { Poppins, Ovo} from "next/font/google";
+import { Hanken_Grotesk} from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+const grotesk = Hanken_Grotesk({
   subsets: ["latin"], weight: ["400", "500", "600", "700"]
 });
-
-const ovo = Ovo({
-  subsets: ["latin"], weight: ["400"]
-});
-
-
 
 export const metadata = {
   title: "Premkumar Saarukesan",
@@ -20,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${poppins.className} ${ovo.className} antialiased leading-8 overflow-x-hidden dark:bg-darkTheme dark:text-white`}
+        className={`${grotesk.className} ${grotesk.className} antialiased leading-8 overflow-x-hidden dark:bg-darkTheme dark:text-white`}
       >
         {children}
       </body>
