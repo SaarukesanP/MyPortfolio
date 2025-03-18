@@ -32,23 +32,23 @@ export const Timeline = ({ data }) => {
                 Education
             </motion.h2>
 
-            <div ref={ref} className="relative max-w-7xl mx-auto pb-20 font-grosky font-semibold">
+            <div ref={ref} className="relative max-w-7xl mx-auto pb-5 font-grosky font-semibold">
                 {data.map((item, index) => (
-                    <div key={index} className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start pt-10 md:pt-40 md:gap-10 relative">
+                    <div key={index} className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start md:pt-20 md:gap-6 relative">
                         {/* Title on the left side */}
-                        <div className="flex md:justify-end md:w-1/2 text-right pr-5 md:pr-10 order-1 md:order-none">
-                            <h3 className="text-xl md:text-4xl font-bold text-blue-600">{item.title}</h3>
+                        <div className="flex md:justify-end md:w-1/2 text-right pr-3 md:pr-6 order-1 md:order-none">
+                            <h3 className="text-lg md:text-3xl font-bold text-blue-600">{item.title}</h3>
                         </div>
 
                         {/* Vertical Line & Circle */}
                         <div className="relative flex items-center justify-center">
-                            <div className="h-10 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center border border-neutral-300 dark:border-neutral-700 z-10">
-                                <div className="h-4 w-4 rounded-full bg-blue-900"/>
+                            <div className="h-8 w-8 rounded-full bg-white dark:bg-black flex items-center justify-center border border-neutral-300 dark:border-neutral-700 z-10">
+                                <div className="h-3 w-3 rounded-full bg-blue-900"/>
                             </div>
                         </div>
 
                         {/* Content on the right side */}
-                        <div className="flex md:w-1/2 text-left pl-5 md:pl-10 order-2 md:order-none">
+                        <div className="flex md:w-1/2 text-left pl-3 md:pl-6 order-2 md:order-none">
                             {item.content}
                         </div>
                     </div>

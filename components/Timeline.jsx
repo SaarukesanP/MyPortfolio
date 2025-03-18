@@ -6,7 +6,7 @@ import {motion} from "motion/react";
 export function TimelineDemo() {
     const data = [
         {
-            title: "From 2025",
+            title: "From 2021",
             content: (
                 <div>
                     <h3 className="flex flex-wrap justify-left items-end mb-3 gap-2 text-xl md:text-2xl font-grosky font-semibold">
