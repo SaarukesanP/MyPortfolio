@@ -39,6 +39,8 @@ import github from './github.png';
 import instagram from './instagram.png';
 import x from './x.png';
 import linkedin from './linkedin.png';
+import background from './background.jpg';
+import logo_1 from './logo_1.png';
 
 export const assets = {
     user_image,
@@ -81,7 +83,9 @@ export const assets = {
     linkedin,
     github,
     instagram,
-    x
+    x,
+    background,
+    logo_1
 };
 
 export const workData = [
