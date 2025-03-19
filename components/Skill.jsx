@@ -5,67 +5,191 @@ import {motion} from "motion/react";
 import Image from "next/image";
 import {assets} from "@/assets/assets";
 
-const people = [
+const web_development = [
     {
         id: 1,
         name: "React.js",
         designation: "Web Development",
-        image:
-            assets.logo_1,
+        image: assets.logo_1,
     },
     {
         id: 2,
-        name: "Robert Johnson",
-        designation: "Product Manager",
-        image:
-            "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+        name: "Node.js",
+        designation: "Web Development",
+        image: assets.logo_2,
     },
     {
         id: 3,
-        name: "Jane Smith",
-        designation: "Data Scientist",
-        image:
-            "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+        name: "Next.js",
+        designation: "Web Development",
+        image: assets.logo_3,
     },
     {
         id: 4,
-        name: "Emily Davis",
-        designation: "UX Designer",
-        image:
-            "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+        name: "Express.js",
+        designation: "Web Development",
+        image: assets.logo_4,
     },
     {
         id: 5,
-        name: "Tyler Durden",
-        designation: "Soap Developer",
-        image:
-            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+        name: "PHP",
+        designation: "Web Development",
+        image: assets.logo_5,
+    },
+];
+
+const programming = [
+    {
+        id: 1,
+        name: "Java",
+        designation: "Programming",
+        image: assets.logo_6,
     },
     {
-        id: 6,
-        name: "Dora",
-        designation: "The Explorer",
-        image:
-            "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+        id: 2,
+        name: "JavaScript",
+        designation: "Programming",
+        image: assets.logo_8,
     },
+    {
+        id: 3,
+        name: "Phython",
+        designation: "Programming",
+        image: assets.logo_7,
+    }
+];
+
+const database = [
+    {
+        id: 1,
+        name: "MySql",
+        designation: "Database Management",
+        image: assets.logo_11,
+    },
+    {
+        id: 2,
+        name: "MariaDB",
+        designation: "Database Management",
+        image: assets.logo_9,
+    },
+    {
+        id: 3,
+        name: "MongoDB",
+        designation: "Database Management",
+        image: assets.logo_10,
+    },
+    {
+        id: 4,
+        name: "Sequalize ORM",
+        designation: "Database Management",
+        image: assets.logo_12,
+    }
+];
+
+const tools = [
+    {
+        id: 1,
+        name: "Visual Studio Code",
+        designation: "Tools & IDEs",
+        image: assets.logo_13,
+    },
+    {
+        id: 2,
+        name: "IntelliJ",
+        designation: "Tools & IDEs",
+        image: assets.logo_14,
+    },
+    {
+        id: 3,
+        name: "MATLAB",
+        designation: "Tools & IDEs",
+        image: assets.logo_15,
+    },
+    {
+        id: 4,
+        name: "Postman",
+        designation: "Tools & IDEs",
+        image: assets.logo_16,
+    }
+];
+
+const design = [
+    {
+        id: 1,
+        name: "Figma",
+        designation: "UI/UX & Design",
+        image: assets.logo_19,
+    },
+    {
+        id: 2,
+        name: "Adobe Photoshop",
+        designation: "UI/UX & Design",
+        image: assets.logo_18,
+    },
+    {
+        id: 3,
+        name: "Adobe Illustrator",
+        designation: "UI/UX & Design",
+        image: assets.logo_17,
+    }
 ];
 
 export function AnimatedTooltipPreview() {
     return (
-        <div className="w-full h-full">
-            <motion.h2
-                initial={{opacity: 0, y: -20}}
-                whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: 0.5}}
-                className="text-center text-5xl font-grosky font-semibold pb-20"
-            >
-                My Skills
-            </motion.h2>
+        <div className="bg-blue-50 flex justify-center items-center">
+            <div className="w-full h-full">
+                <motion.h2
+                    initial={{y: -20, opacity: 0}}
+                    whileInView={{y: 0, opacity: 1}}
+                    transition={{delay: 0.5, duration: 0.5}}
+                    className='text-center text-blue-950 text-4xl sm:text-4xl lg:text-5xl md:text-5xl font-grosky font-semibold mb-10'>
+                    My Skills
+                </motion.h2>
 
-            <div className="flex flex-row items-center justify-center mb-10 w-full">
-                <AnimatedTooltip items={people}/>
+                <div>
+                    <motion.div
+                        initial={{scale: 0}}
+                        whileInView={{scale: 1}}
+                        transition={{duration: 0.8, type: "spring", stiffness: 100}}
+                        className="flex flex-row items-center justify-center gap-5 mb-10 w-full"
+                    >
+                        <AnimatedTooltip items={web_development}/>
+                    </motion.div>
+                    <motion.div
+                        initial={{scale: 0}}
+                        whileInView={{scale: 1}}
+                        transition={{duration: 0.8, type: "spring", stiffness: 100}}
+                        className="flex flex-row items-center justify-center gap-5 mb-10 w-full"
+                    >
+                        <AnimatedTooltip items={programming}/>
+                    </motion.div>
+                    <motion.div
+                        initial={{scale: 0}}
+                        whileInView={{scale: 1}}
+                        transition={{duration: 0.8, type: "spring", stiffness: 100}}
+                        className="flex flex-row items-center justify-center gap-5 mb-10 w-full"
+                    >
+                        <AnimatedTooltip items={database}/>
+                    </motion.div>
+                    <motion.div
+                        initial={{scale: 0}}
+                        whileInView={{scale: 1}}
+                        transition={{duration: 0.8, type: "spring", stiffness: 100}}
+                        className="flex flex-row items-center justify-center gap-5 mb-10 w-full"
+                    >
+                        <AnimatedTooltip items={tools}/>
+                    </motion.div>
+                    <motion.div
+                        initial={{scale: 0}}
+                        whileInView={{scale: 1}}
+                        transition={{duration: 0.8, type: "spring", stiffness: 100}}
+                        className="flex flex-row items-center justify-center gap-5 mb-10 w-full"
+                    >
+                        <AnimatedTooltip items={design}/>
+                    </motion.div>
+                </div>
             </div>
         </div>
-)
-    ;
+    )
+        ;
 }
