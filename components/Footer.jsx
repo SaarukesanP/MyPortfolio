@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = ({isDarkMode}) => {
   return (
-    <div className="bg-blue-50 flex justify-center items-center">
+    // <div className="bg-blue-50 flex justify-center items-center">
         <div className='text-center'>
             <div className='w-max flex items-center gap-2 mx-auto'>
                 <Image src={assets.location} alt='' className='w-6'/>
@@ -21,7 +21,7 @@ const Footer = ({isDarkMode}) => {
             </div>
         </div>
 
-    </div>
+    // </div>
   )
 }
 
