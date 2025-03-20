@@ -1,5 +1,4 @@
 "use client";
-import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 
 export const Timeline = ({ data }) => {
@@ -14,25 +13,12 @@ export const Timeline = ({ data }) => {
         }
     }, [ref]);
 
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start 10%", "end 50%"],
-    });
-
-    const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-    const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-
     return (
-        <div className="w-full font-grosky px-4 md:px-10" ref={containerRef}>
+        <div className="font-grosky px-4 md:px-10" ref={containerRef}>
             {/* Title */}
-            <motion.h2
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold py-8"
-            >
+            <h2 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold py-8">
                 Education
-            </motion.h2>
+            </h2>
 
             {/* Timeline Content */}
             <div ref={ref} className="relative max-w-7xl mx-auto font-grosky font-semibold">

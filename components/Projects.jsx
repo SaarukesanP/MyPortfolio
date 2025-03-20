@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
-import { motion } from "motion/react";
 
 export function AppleCardsCarouselDemo() {
     const cards = data.map((card, index) => (
@@ -10,23 +9,21 @@ export function AppleCardsCarouselDemo() {
     ));
 
     return (
-        <div className="min-h-screen flex justify-center items-center">
-        <div className="w-full h-full">
-            <motion.h2
-                initial={{opacity: 0, y: -20}}
-                whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: 0.5}}
-                className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold"
-            >
-                My Projects
-            </motion.h2>
-            <Carousel items={cards}/>
-        </div>
+        <div className=" flex justify-center items-center">
+            <div className="w-full h-full py-10 scroll-mt-20">
+                {/* Heading */}
+                <h2 className="text-center text-blue-950 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold mb-10">
+                    My Projects
+                </h2>
+
+                {/* Carousel */}
+                <Carousel items={cards} />
+            </div>
         </div>
     );
 }
 
-const DummyContent = ({project}) => {
+const DummyContent = ({ project }) => {
     return (
         <div className="p-8 md:p-14 rounded-3xl mb-4">
             {/* Description */}

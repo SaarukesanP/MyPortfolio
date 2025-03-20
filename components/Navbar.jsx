@@ -1,81 +1,92 @@
-import { assets } from '@/assets/assets'
-import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+"use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
-const Navbar = ({isDarkMode, setIsDarkMode}) => {
+const Navbar = ({ activeCategory, setActiveCategory }) => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const [isScroll, setIsScroll] = useState(false)
-    const sideMenuRef = useRef();
+    const categories = [
+        { name: "UI/UX Design", id: "ui-ux" },
+        { name: "Poster Design", id: "poster" },
+        { name: "Logo Design", id: "logo" },
+        { name: "Photo Editing", id: "photo" },
+    ];
 
-    const openMenu = ()=>{
-        sideMenuRef.current.style.transform = 'translateX(-16rem)'
-    }
-    const closeMenu = ()=>{
-        sideMenuRef.current.style.transform = 'translateX(16rem)'
-    }
 
-    useEffect(()=>{
-        window.addEventListener('scroll', ()=>{
-            if(scrollY > 50){
-                setIsScroll(true)
-            }else{
-                setIsScroll(false)
-            }
-        })
-    },[])
+    return (
+        <nav className="fixed top-0 w-full bg-white shadow-md z-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between items-center h-16">
+                    {/* Logo */}
+                    <div className="text-xl font-bold text-blue-600">My Portfolio</div>
 
-  return (
-    <>
-    <div className='fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden'>
-       <Image src={assets.header_bg_color} alt='' className='w-full' />
-    </div>
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex space-x-8">
+                        {categories.map((category) => (
+                            <Link
+                                key={category.id}
+                                href={`#${category.id}`}
+                                onClick={() => setActiveCategory(category.id)}
+                                className={`text-gray-700 hover:text-blue-600 ${
+                                    activeCategory === category.id ? "text-blue-600 font-semibold" : ""
+                                }`}
+                            >
+                                {category.name}
+                            </Link>
+                        ))}
+                    </div>
 
-      <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20" : ""}`}>
-        <a href="#top">
-            <Image src={isDarkMode ? assets.logo_dark : assets.linkedin} alt='' className='w-28 alt="" cursor-pointer mr-14'/>
-        </a>
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="md:hidden p-2 text-gray-700 hover:text-blue-600"
+                    >
+                        <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M4 6h16M4 12h16m-7 6h7"
+                            />
+                        </svg>
+                    </button>
+                </div>
 
-        <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"} `}>
-            <li><a className='font-Ovo' href="#top">Home</a></li>
-            <li><a className='font-Ovo' href="#timeline">Timeline</a></li>
-            <li><a className='font-Ovo' href="#services">Services</a></li>
-            <li><a className='font-Ovo' href="#work">My Work</a></li>
-            <li><a className='font-Ovo' href="#contact">Contact me</a></li>
-        </ul>
-
-        <div className='flex items-center gap-4'>
-
-            <button onClick={()=> setIsDarkMode(prev => !prev)}>
-                <Image src={isDarkMode ? assets.sun_icon : assets.moon_icon} alt='' className='w-6' />
-            </button>
-
-            <a href="#contact" className='hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50'>Contact 
-            <Image src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon} alt="" className='w-3'/></a>
-
-            <button className='block md:hidden ml-3' onClick={openMenu}>
-            <Image src={isDarkMode ? assets.menu_white : assets.menu_black} alt='' className='w-6' />
-            </button>
-        </div>
-
-        {/* -- ----- mobile menu ------  -- */}
-
-        <ul ref={sideMenuRef} className='flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-darkHover dark:text-white'>
-
-            <div className='absolute right-6 top-6' onClick={closeMenu}>
-                <Image src={isDarkMode ? assets.close_white : assets.close_black} alt='' className='w-5 cursor-pointer' />
+                {/* Mobile Menu */}
+                {isMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="md:hidden bg-white shadow-lg"
+                    >
+                        {categories.map((category) => (
+                            <Link
+                                key={category.id}
+                                href={`#${category.id}`}
+                                onClick={() => {
+                                    setActiveCategory(category.id);
+                                    setIsMenuOpen(false);
+                                }}
+                                className={`block px-4 py-2 text-gray-700 hover:text-blue-600 ${
+                                    activeCategory === category.id ? "text-blue-600 font-semibold" : ""
+                                }`}
+                            >
+                                {category.name}
+                            </Link>
+                        ))}
+                    </motion.div>
+                )}
             </div>
+        </nav>
+    );
+};
 
-            <li><a className='font-Ovo' onClick={closeMenu} href="#top">Home</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#timeline">Timeline</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#services">Services</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#work">My Work</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#contact">Contact me</a></li>
-        </ul>
-
-
-      </nav>
-    </>
-  )
-}
-
-export default Navbar
+export default Navbar;

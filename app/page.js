@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Header2 from "../components/Header2";
 import Navbar2 from "../components/Navbar2";
 import {AppleCardsCarouselDemo} from "../components/Projects";
-import {BentoGridSecondDemo} from "../components/Work2";
+import {TabsDemo} from "../components/Work2";
 import {TimelineDemo} from "../components/Timeline";
 import {AnimatedTooltipPreview} from "../components/Skill";
 
@@ -35,11 +35,11 @@ export default function Home() {
   return (
       <>
           <Navbar2/>
-          <div className='w-full px-[12%] py-10 scroll-mt-20 bg-gradient-to-br from-blue-200 via-blue-50 to-blue-100'>
+          <div className='w-full py-10 scroll-mt-20 bg-gradient-to-br from-blue-200 via-blue-50 to-blue-100'>
               <Header2/>
               <TimelineDemo/>
               <AppleCardsCarouselDemo/>
-              {/*<BentoGridSecondDemo/>*/}
+              {/*<TabsDemo/>*/}
               <AnimatedTooltipPreview/>
               <Contact/>
               <Footer/>

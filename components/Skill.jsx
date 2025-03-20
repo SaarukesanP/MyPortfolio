@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import {motion} from "motion/react";
 import Image from "next/image";
-import {assets} from "@/assets/assets";
+import { assets } from "@/assets/assets";
 
 const web_development = [
     {
@@ -53,10 +52,10 @@ const programming = [
     },
     {
         id: 3,
-        name: "Phython",
+        name: "Python",
         designation: "Programming",
         image: assets.logo_7,
-    }
+    },
 ];
 
 const database = [
@@ -80,10 +79,10 @@ const database = [
     },
     {
         id: 4,
-        name: "Sequalize ORM",
+        name: "Sequelize ORM",
         designation: "Database Management",
         image: assets.logo_12,
-    }
+    },
 ];
 
 const tools = [
@@ -110,7 +109,7 @@ const tools = [
         name: "Postman",
         designation: "Tools & IDEs",
         image: assets.logo_16,
-    }
+    },
 ];
 
 const design = [
@@ -131,66 +130,44 @@ const design = [
         name: "Adobe Illustrator",
         designation: "UI/UX & Design",
         image: assets.logo_17,
-    }
+    },
 ];
 
 export function AnimatedTooltipPreview() {
     return (
-        // <div className="bg-blue-50 flex justify-center items-center">
-            <div className="w-full h-full">
-                <motion.h2
-                    initial={{y: -20, opacity: 0}}
-                    whileInView={{y: 0, opacity: 1}}
-                    transition={{delay: 0.5, duration: 0.5}}
-                    id={"skill"}
-                    className='text-center text-blue-950 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold mb-10 mt-10'>
-                    My Skills
-                </motion.h2>
+        <div className="w-full h-full px-[12%] py-10 scroll-mt-20">
+            {/* Heading */}
+            <h2 id="skill" className="text-center text-blue-950 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold mb-10">
+                My Skills
+            </h2>
 
-                <div>
-                    <motion.div
-                        initial={{scale: 0}}
-                        whileInView={{scale: 1}}
-                        transition={{duration: 0.8, type: "spring", stiffness: 100}}
-                        className="flex flex-row items-center justify-center gap-5 mb-10 w-full"
-                    >
-                        <AnimatedTooltip items={web_development}/>
-                    </motion.div>
-                    <motion.div
-                        initial={{scale: 0}}
-                        whileInView={{scale: 1}}
-                        transition={{duration: 0.8, type: "spring", stiffness: 100}}
-                        className="flex flex-row items-center justify-center gap-5 mb-10 w-full"
-                    >
-                        <AnimatedTooltip items={programming}/>
-                    </motion.div>
-                    <motion.div
-                        initial={{scale: 0}}
-                        whileInView={{scale: 1}}
-                        transition={{duration: 0.8, type: "spring", stiffness: 100}}
-                        className="flex flex-row items-center justify-center gap-5 mb-10 w-full"
-                    >
-                        <AnimatedTooltip items={database}/>
-                    </motion.div>
-                    <motion.div
-                        initial={{scale: 0}}
-                        whileInView={{scale: 1}}
-                        transition={{duration: 0.8, type: "spring", stiffness: 100}}
-                        className="flex flex-row items-center justify-center gap-5 mb-10 w-full"
-                    >
-                        <AnimatedTooltip items={tools}/>
-                    </motion.div>
-                    <motion.div
-                        initial={{scale: 0}}
-                        whileInView={{scale: 1}}
-                        transition={{duration: 0.8, type: "spring", stiffness: 100}}
-                        className="flex flex-row items-center justify-center gap-5 mb-10 w-full"
-                    >
-                        <AnimatedTooltip items={design}/>
-                    </motion.div>
+            {/* Skill Sections */}
+            <div className="space-y-10">
+                {/* Web Development */}
+                <div className="flex flex-row items-center justify-center gap-5 w-full">
+                    <AnimatedTooltip items={web_development} />
+                </div>
+
+                {/* Programming */}
+                <div className="flex flex-row items-center justify-center gap-5 w-full">
+                    <AnimatedTooltip items={programming} />
+                </div>
+
+                {/* Database */}
+                <div className="flex flex-row items-center justify-center gap-5 w-full">
+                    <AnimatedTooltip items={database} />
+                </div>
+
+                {/* Tools & IDEs */}
+                <div className="flex flex-row items-center justify-center gap-5 w-full">
+                    <AnimatedTooltip items={tools} />
+                </div>
+
+                {/* UI/UX & Design */}
+                <div className="flex flex-row items-center justify-center gap-5 w-full">
+                    <AnimatedTooltip items={design} />
                 </div>
             </div>
-        // </div>
-    )
-        ;
+        </div>
+    );
 }
