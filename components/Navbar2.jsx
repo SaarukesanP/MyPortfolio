@@ -44,10 +44,10 @@ const Navbar2 = ({isDarkMode, setIsDarkMode}) => {
                     <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm dark:border dark:border-white/50 dark:bg-transparent"} `}>
                         <li><a className='font-grotesk hover:text-blue-600 transform duration-300' href="#top">Home</a></li>
                         <li><a className='font-grotesk hover:text-blue-600 transform duration-300' href="#education">Education</a></li>
-                        <li><a className='font-grotesk' href="#project">Projects</a></li>
-                        <li><a className='font-grotesk' href="#work">Works</a></li>
-                        <li><a className='font-grotesk' href="#skill">Skills</a></li>
-                        <li><a className='font-grotesk' href="#contact">Contact</a></li>
+                        <li><a className='font-grotesk hover:text-blue-600 transform duration-300' href="#project">Projects</a></li>
+                        <li><a className='font-grotesk hover:text-blue-600 transform duration-300' href="#work">Works</a></li>
+                        <li><a className='font-grotesk hover:text-blue-600 transform duration-300' href="#skill">Skills</a></li>
+                        <li><a className='font-grotesk hover:text-blue-600 transform duration-300' href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
