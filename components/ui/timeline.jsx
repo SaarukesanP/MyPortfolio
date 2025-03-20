@@ -36,17 +36,6 @@ export const Timeline = ({ data }) => {
 
             {/* Timeline Content */}
             <div ref={ref} className="relative max-w-7xl mx-auto font-grosky font-semibold">
-                {/* Vertical Line */}
-                {/*<div*/}
-                {/*    style={{ height: height + "px" }}*/}
-                {/*    className="absolute left-1/2 transform -translate-x-1/2 w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"*/}
-                {/*>*/}
-                {/*    <motion.div*/}
-                {/*        style={{ height: heightTransform, opacity: opacityTransform }}*/}
-                {/*        className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"*/}
-                {/*    />*/}
-                {/*</div>*/}
-
                 {data.map((item, index) => (
                     <div
                         key={index}
@@ -67,9 +56,9 @@ export const Timeline = ({ data }) => {
                             </h3>
 
                             {/* Content */}
-                            <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300">
+                            <div className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300">
                                 {item.content}
-                            </p>
+                            </div>
                         </div>
                     </div>
                 ))}
