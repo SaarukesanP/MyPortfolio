@@ -10,23 +10,25 @@ export function AppleCardsCarouselDemo() {
     ));
 
     return (
-        <div className="w-full h-full py-20">
+        <div className="min-h-screen flex justify-center items-center">
+        <div className="w-full h-full">
             <motion.h2
                 initial={{opacity: 0, y: -20}}
                 whileInView={{opacity: 1, y: 0}}
                 transition={{duration: 0.5, delay: 0.5}}
-                className="text-center text-5xl font-grosky font-semibold"
+                className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold"
             >
                 My Projects
             </motion.h2>
             <Carousel items={cards}/>
+        </div>
         </div>
     );
 }
 
 const DummyContent = ({project}) => {
     return (
-        <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
+        <div className="p-8 md:p-14 rounded-3xl mb-4">
             {/* Description */}
             <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl font-sans mb-4 text-justify">
                 {project.description}

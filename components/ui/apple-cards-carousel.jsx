@@ -1,16 +1,6 @@
-"use client";;
-import React, {
-    useEffect,
-    useRef,
-    useState,
-    createContext,
-    useContext,
-} from "react";
-import {
-    IconArrowNarrowLeft,
-    IconArrowNarrowRight,
-    IconX,
-} from "@tabler/icons-react";
+"use client";
+import React, { useEffect, useRef, useState, createContext, useContext } from "react";
+import { IconArrowNarrowLeft, IconArrowNarrowRight, IconX } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
@@ -21,10 +11,7 @@ export const CarouselContext = createContext({
     currentIndex: 0,
 });
 
-export const Carousel = ({
-                             items,
-                             initialScroll = 0
-                         }) => {
+export const Carousel = ({ items, initialScroll = 0 }) => {
     const carouselRef = React.useRef(null);
     const [canScrollLeft, setCanScrollLeft] = React.useState(false);
     const [canScrollRight, setCanScrollRight] = React.useState(true);
@@ -78,26 +65,22 @@ export const Carousel = ({
         <CarouselContext.Provider value={{ onCardClose: handleCardClose, currentIndex }}>
             <div className="relative w-full">
                 <div
-                    className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+                    className="flex w-full overflow-x-scroll overscroll-x-auto py-6 md:py-12 lg:py-20 scroll-smooth [scrollbar-width:none]"
                     ref={carouselRef}
                     onScroll={checkScrollability}>
                     <div
                         className={cn(
-                            "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
+                            "absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l"
                         )}></div>
 
                     <div
                         className={cn(
                             "flex flex-row justify-start gap-4 pl-4",
-                            // remove max-w-4xl if you want the carousel to span the full width of its container
                             "max-w-7xl mx-auto"
                         )}>
                         {items.map((item, index) => (
                             <motion.div
-                                initial={{
-                                    opacity: 0,
-                                    y: 20,
-                                }}
+                                initial={{ opacity: 0, y: 20 }}
                                 animate={{
                                     opacity: 1,
                                     y: 0,
@@ -109,13 +92,13 @@ export const Carousel = ({
                                     },
                                 }}
                                 key={"card" + index}
-                                className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl">
+                                className="last:pr-[5%] md:last:pr-[33%] rounded-3xl">
                                 {item}
                             </motion.div>
                         ))}
                     </div>
                 </div>
-                <div className="flex justify-end gap-2 mr-10">
+                <div className="flex justify-end gap-2 mr-4 md:mr-10">
                     <button
                         className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
                         onClick={scrollLeft}
@@ -134,11 +117,7 @@ export const Carousel = ({
     );
 };
 
-export const Card = ({
-                         card,
-                         index,
-                         layout = false
-                     }) => {
+export const Card = ({ card, index, layout = false }) => {
     const [open, setOpen] = useState(false);
     const containerRef = useRef(null);
     const { onCardClose, currentIndex } = useContext(CarouselContext);
@@ -177,21 +156,22 @@ export const Card = ({
                 {open && (
                     <div className="fixed inset-0 h-screen z-50 overflow-auto">
                         <motion.div
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            exit={{opacity: 0}}
-                            className="bg-black/80 backdrop-blur-lg h-full w-full fixed inset-0"/>
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="bg-black/80 backdrop-blur-lg h-full w-full fixed inset-0"
+                        />
                         <motion.div
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            exit={{opacity: 0}}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
                             ref={containerRef}
                             layoutId={layout ? `card-${card.title}` : undefined}
-                            className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative">
+                            className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative">
                             <button
                                 className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
                                 onClick={handleClose}>
-                                <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900"/>
+                                <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
                             </button>
                             <motion.p
                                 layoutId={layout ? `category-${card.title}` : undefined}
@@ -208,17 +188,13 @@ export const Card = ({
                     </div>
                 )}
             </AnimatePresence>
+
             <motion.button
                 layoutId={layout ? `card-${card.title}` : undefined}
                 onClick={handleOpen}
-                className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-60 w-100 md:h-[20rem] md:w-[35rem] overflow-hidden flex flex-col items-start justify-start relative z-10">
-
-                {/* 🔥 Updated Gradient Overlay with Dark Blue at the Top */}
-                <div
-                    className="absolute inset-0 bg-gradient-to-b from-blue-950/80 via-blue-700/50 to-transparent z-30 pointer-events-none"
-                />
-
-                <div className="relative z-40 p-8">
+                className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-48 w-80 md:h-64 md:w-96 lg:h-80 lg:w-[35rem] overflow-hidden flex flex-col items-start justify-start relative z-10">
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-950/80 via-blue-700/50 to-transparent z-30 pointer-events-none" />
+                <div className="relative z-40 p-6">
                     <motion.p
                         layoutId={layout ? `category-${card.category}` : undefined}
                         className="text-white text-sm md:text-base font-medium font-sans text-left">
@@ -230,8 +206,6 @@ export const Card = ({
                         {card.title}
                     </motion.p>
                 </div>
-
-                {/* Background Image */}
                 <BlurImage
                     src={card.src}
                     alt={card.title}
@@ -239,19 +213,11 @@ export const Card = ({
                     className="object-cover absolute z-10 inset-0"
                 />
             </motion.button>
-
         </>
     );
 };
 
-export const BlurImage = ({
-                              height,
-                              width,
-                              src,
-                              className,
-                              alt,
-                              ...rest
-                          }) => {
+export const BlurImage = ({ height, width, src, className, alt, ...rest }) => {
     const [isLoading, setLoading] = useState(true);
     return (
         <Image
@@ -264,6 +230,7 @@ export const BlurImage = ({
             decoding="async"
             blurDataURL={typeof src === "string" ? src : undefined}
             alt={alt ? alt : "Background of a beautiful view"}
-            {...rest} />
+            {...rest}
+        />
     );
 };
