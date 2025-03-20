@@ -136,13 +136,14 @@ const design = [
 
 export function AnimatedTooltipPreview() {
     return (
-        <div className="bg-blue-50 flex justify-center items-center">
+        // <div className="bg-blue-50 flex justify-center items-center">
             <div className="w-full h-full">
                 <motion.h2
                     initial={{y: -20, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
                     transition={{delay: 0.5, duration: 0.5}}
-                    className='text-center text-blue-950 text-4xl sm:text-4xl lg:text-5xl md:text-5xl font-grosky font-semibold mb-10'>
+                    id={"skill"}
+                    className='text-center text-blue-950 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold mb-10 mt-10'>
                     My Skills
                 </motion.h2>
 
@@ -189,7 +190,7 @@ export function AnimatedTooltipPreview() {
                     </motion.div>
                 </div>
             </div>
-        </div>
+        // </div>
     )
         ;
 }

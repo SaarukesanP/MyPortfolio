@@ -29,7 +29,7 @@ export const Timeline = ({ data }) => {
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-grosky font-semibold py-8"
+                className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold py-8"
             >
                 Education
             </motion.h2>

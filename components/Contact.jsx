@@ -33,7 +33,7 @@ const Contact = () => {
 
 
   return (
-      <div className="min-h-screen bg-blue-50 flex justify-center items-center">
+      // <div className="min-h-screen bg-blue-50 flex justify-center items-center">
     <motion.div
     initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -51,7 +51,7 @@ const Contact = () => {
       initial={{ y: -20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.5 }}
-      className='text-center text-blue-950 text-4xl sm:text-4xl lg:text-5xl md:text-5xl  font-grosky font-semibold'>
+      className='text-center text-blue-950 text-2xl sm:text-3xl md:text-4xl lg:text-5xl  font-grosky font-semibold'>
       Get in touch</motion.h2>
 
       <motion.p
@@ -100,7 +100,7 @@ const Contact = () => {
         <p className='mt-4'>{result}</p>
       </motion.form>
     </motion.div>
-      </div>
+      // </div>
   )
 }
 
