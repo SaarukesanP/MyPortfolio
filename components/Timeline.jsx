@@ -1,62 +1,52 @@
 import Image from "next/image";
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
-import {motion} from "motion/react";
+import { motion } from "motion/react";
 
 export function TimelineDemo() {
-    const data = [
+    const timelineData = [
         {
-            title: "From 2021",
-            content: (
-                <div>
-                    <h3 className="flex flex-wrap justify-left items-end mb-3 gap-2 text-xl md:text-2xl font-grosky font-semibold">
-                        BSc Hons in Computer Science
-                    </h3>
-                    <h3 className="flex flex-wrap justify-left items-end mb-3 gap-2 text-xl md:text-1xl font-grosky font-medium">
-                        University of Jaffna
-                    </h3>
-                    <h3 className="flex flex-wrap justify-left items-end gap-2 text-xl md:text-1xl font-grosky font-medium">
-                        CGPA: 3.21/4.00
-                    </h3>
-                </div>
-            ),
+            title: "From 2021" ,
+            details: [
+                { text: "BSc Hons in Computer Science"},
+                { text: "University of Jaffna"},
+                { text: "CGPA: 3.21/4.00"}
+            ]
         },
         {
             title: "2019",
-            content: (
-                <div>
-                    <h3 className="flex flex-wrap justify-left items-end mb-3 gap-2 text-xl md:text-2xl font-grosky font-semibold">
-                        G.C.E Advanced Level(Mathemetics Stream)
-                    </h3>
-                    <h3 className="flex flex-wrap justify-left items-end mb-3 gap-2 text-xl md:text-1xl font-grosky font-medium">
-                        St/Michael's College
-                    </h3>
-                    <h3 className="flex flex-wrap justify-left items-end gap-2 text-xl md:text-1xl font-grosky font-medium">
-                        Z-Score: 1.1931
-                    </h3>
-                </div>
-            ),
+            details: [
+                { text: "G.C.E Advanced Level (Mathematics Stream)" },
+                { text: "St. Michael's College"},
+                { text: "Z-Score: 1.1931"}
+            ]
         },
         {
             title: "2016",
-            content: (
-                <div>
-                    <h3 className="flex flex-wrap justify-left items-end mb-3 gap-2 text-xl md:text-2xl font-grosky font-semibold">
-                        G.C.E Ordinary Level
-                    </h3>
-                    <h3 className="flex flex-wrap justify-left items-end mb-3 gap-2 text-xl md:text-1xl font-grosky font-medium">
-                        St/Michael's College
-                    </h3>
-                    <h3 className="flex flex-wrap justify-left items-end gap-2 text-xl md:text-1xl font-grosky font-medium">
-                        Results: 6A 3B
-                    </h3>
-                </div>
-            ),
-        },
+            details: [
+                { text: "G.C.E Ordinary Level"},
+                { text: "St. Michael's College"},
+                { text: "Results: 6A 3B"}
+            ]
+        }
     ];
+
+    const formattedData = timelineData.map((item) => ({
+        title: item.title,
+        content: (
+            <div>
+                {item.details.map((detail, index) => (
+                    <h3 key={index} className={`${detail.className}`}>
+                        {detail.text}
+                    </h3>
+                ))}
+            </div>
+        )
+    }));
+
     return (
-        (<div className="w-full">
-            <Timeline data={data}/>
-        </div>)
+        <div className="w-full">
+            <Timeline data={formattedData} />
+        </div>
     );
 }
