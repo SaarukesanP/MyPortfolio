@@ -36,14 +36,14 @@ const Navbar2 = ({isDarkMode, setIsDarkMode}) => {
                 {/* Left Side - Logo */}
                 <a href="https://www.linkedin.com/in/saarukesan-premkumar-7a5a92195/">
                     <Image src={isDarkMode ? assets.logo_dark : assets.linkedin} alt=''
-                           className='w-10 cursor-pointer'/>
+                           className='w-10 cursor-pointer transition-transform duration-300 hover:scale-125'/>
                 </a>
 
                 {/* Center - Navigation Links */}
                 <div className="flex-grow flex justify-center">
-                    <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"} `}>
-                        <li><a className='font-grotesk' href="#top">Home</a></li>
-                        <li><a className='font-grotesk' href="#education">Education</a></li>
+                    <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm dark:border dark:border-white/50 dark:bg-transparent"} `}>
+                        <li><a className='font-grotesk hover:text-blue-600 transform duration-300' href="#top">Home</a></li>
+                        <li><a className='font-grotesk hover:text-blue-600 transform duration-300' href="#education">Education</a></li>
                         <li><a className='font-grotesk' href="#project">Projects</a></li>
                         <li><a className='font-grotesk' href="#work">Works</a></li>
                         <li><a className='font-grotesk' href="#skill">Skills</a></li>

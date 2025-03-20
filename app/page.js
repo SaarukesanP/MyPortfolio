@@ -1,16 +1,11 @@
 'use client'
 import { useEffect, useState } from "react";
-import About from "../components/About";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 import Header2 from "../components/Header2";
-import Navbar from "../components/Navbar";
 import Navbar2 from "../components/Navbar2";
-import Services from "../components/Services";
 import {AppleCardsCarouselDemo} from "../components/Projects";
-import Work from "../components/Work";
-import {LayoutGridDemo} from "../components/Work2";
+import {BentoGridSecondDemo} from "../components/Work2";
 import {TimelineDemo} from "../components/Timeline";
 import {AnimatedTooltipPreview} from "../components/Skill";
 
@@ -38,17 +33,18 @@ export default function Home() {
  // },[isDarkMode])
 
   return (
-    <>
-    <Navbar2/>
-    <Header2/>
-    {/*<About isDarkMode={isDarkMode} />*/}
-        <TimelineDemo/>
-    <AppleCardsCarouselDemo/>
-    <LayoutGridDemo/>
-        <AnimatedTooltipPreview/>
-    <Contact/>
-    <Footer/>
+      <>
+          <Navbar2/>
+          <div className='w-full px-[12%] py-10 scroll-mt-20 bg-gradient-to-br from-blue-200 via-blue-50 to-blue-100'>
+              <Header2/>
+              <TimelineDemo/>
+              <AppleCardsCarouselDemo/>
+              {/*<BentoGridSecondDemo/>*/}
+              <AnimatedTooltipPreview/>
+              <Contact/>
+              <Footer/>
+          </div>
+      </>
 
-    </>
   );
 }
