@@ -9,9 +9,9 @@ const Header2 = () => {
     const words = ["Full-Stack Development", "UI/UX Design", "Graphic Design"];
 
     return (
-        <div className="min-h-screen bg-blue-50 flex justify-center items-center">
+        // <div className="min-h-screen bg-blue-50 flex justify-center items-center">
             <div
-                className="w-11/12 max-w-4xl text-center mx-auto flex flex-col items-center justify-center min-h-screen">
+                className=" text-center mx-auto flex flex-col items-center justify-center min-h-screen">
 
                 {/* Profile Image */}
                 <motion.div
@@ -19,7 +19,7 @@ const Header2 = () => {
                     whileInView={{scale: 1}}
                     transition={{duration: 0.8, type: "spring", stiffness: 100}}
                 >
-                    <Image src={assets.profile_img} alt="Profile" className="rounded-full mb-6 w-40 mt-10"/>
+                    <Image src={assets.profile_img} alt="Profile" className="rounded-full mb-6 w-40 "/>
                 </motion.div>
 
                 {/* Name Heading */}
@@ -97,7 +97,7 @@ const Header2 = () => {
                 </div>
 
             </div>
-        </div>
+        // </div>
     );
 }
 
