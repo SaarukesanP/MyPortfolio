@@ -21,14 +21,14 @@ export function TimelineDemo() {
                 { text: "Z-Score: 1.1931"}
             ]
         },
-        {
-            title: "2016",
-            details: [
-                { text: "G.C.E Ordinary Level"},
-                { text: "St. Michael's College"},
-                { text: "Results: 6A 3B"}
-            ]
-        }
+        // {
+        //     title: "2016",
+        //     details: [
+        //         { text: "G.C.E Ordinary Level"},
+        //         { text: "St. Michael's College"},
+        //         { text: "Results: 6A 3B"}
+        //     ]
+        // }
     ];
 
     const formattedData = timelineData.map((item) => ({
@@ -46,6 +46,10 @@ export function TimelineDemo() {
 
     return (
         <div className="w-full">
+            {/* Title */}
+            <h2 className="text-center text-4xl font-light tracking-tight text-blue-950 mb-4 font-grosky">
+                Education
+            </h2>
             <Timeline data={formattedData} />
         </div>
     );

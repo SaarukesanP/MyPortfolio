@@ -32,15 +32,15 @@ const Contact = () => {
     return (
         <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20 bg-no-repeat bg-center bg-[length:90%_auto]">
             {/* Heading */}
-            <h4 className="text-center text-gray-700 text-[15px] leading-normal mb-2 text-lg font-grosky">
+            <h4 className="text-base text-gray-600 text-center max-w-2xl mx-auto animate-fade-in font-grosky mb-2">
                 Connect with me
             </h4>
 
-            <h2 className="text-center text-blue-950 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold">
+            <h2 className="text-center text-4xl font-light tracking-tight text-blue-950 font-grosky">
                 Get in touch
             </h2>
 
-            <p className="text-center text-gray-700 text-[15px] leading-normal max-w-2xl mx-auto mt-2 mb-8 font-grosky">
+            <p className="text-base text-gray-600 text-center max-w-2xl mx-auto animate-fade-in font-grosky mt-2 mb-8">
                 I'd love to hear from you! If you have any questions, comments, or feedback, please use the form below.
             </p>
 

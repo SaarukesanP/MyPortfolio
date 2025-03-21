@@ -50,7 +50,7 @@ const Header2 = () => {
             </p>
 
             {/* Social Media Links */}
-            <div className="flex items-center gap-6 my-2">
+            <div className="flex items-center gap-6 mt-2 mb-12">
                 <a href="https://www.instagram.com/saarukesan.p/?__pwa=1">
                     <Image
                         src={assets.instagram}

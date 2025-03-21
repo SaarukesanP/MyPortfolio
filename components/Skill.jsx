@@ -137,8 +137,8 @@ export function AnimatedTooltipPreview() {
     return (
         <div className="w-full h-full px-[12%] py-10 scroll-mt-20">
             {/* Heading */}
-            <h2 id="skill" className="text-center text-blue-950 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold mb-10">
-                My Skills
+            <h2 id="skill" className="text-center text-4xl font-light tracking-tight text-blue-950 mb-12 font-grosky">
+                Skills
             </h2>
 
             {/* Skill Sections */}

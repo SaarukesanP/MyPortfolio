@@ -15,11 +15,6 @@ export const Timeline = ({ data }) => {
 
     return (
         <div className="font-grosky px-4 md:px-10" ref={containerRef}>
-            {/* Title */}
-            <h2 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-grosky font-semibold py-8">
-                Education
-            </h2>
-
             {/* Timeline Content */}
             <div ref={ref} className="relative max-w-7xl mx-auto font-grosky font-semibold">
                 {data.map((item, index) => (
@@ -37,12 +32,12 @@ export const Timeline = ({ data }) => {
                         {/* Title and Content */}
                         <div className="flex flex-col items-center text-center gap-2">
                             {/* Title */}
-                            <h3 className="text-xl sm:text-2xl font-bold text-blue-600">
+                            <h3 className="text-xl sm:text-2xl font-medium text-blue-600">
                                 {item.title}
                             </h3>
 
                             {/* Content */}
-                            <div className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300">
+                            <div className="text-sm sm:text-base text-neutral-700 font-light">
                                 {item.content}
                             </div>
                         </div>
