@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Header2 from "../components/Header2";
 import Navbar2 from "../components/Navbar2";
 import {AppleCardsCarouselDemo} from "../components/Projects";
-import {TabsDemo} from "../components/Work2";
+import Gallery from "../components/Work2";
 import {TimelineDemo} from "../components/Timeline";
 import {AnimatedTooltipPreview} from "../components/Skill";
 
@@ -39,7 +39,7 @@ export default function Home() {
               <Header2/>
               <TimelineDemo/>
               <AppleCardsCarouselDemo/>
-              {/*<TabsDemo/>*/}
+              <Gallery/>
               <AnimatedTooltipPreview/>
               <Contact/>
               <Footer/>
