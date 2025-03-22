@@ -43,7 +43,7 @@ const data = [
         organization: "University of Jaffna (MyUoJ)",
         technologies: ["PHP", "Tailwind CSS", "JavaScript", "MySQL"],
         content: "Our team successfully developed an Exam Registration System as part of the Web Technologies course during our second year at university. This comprehensive system streamlines the exam management process for the Dean's Office, Science Department. It is designed to cater to various administrative roles and student needs, ensuring efficiency and accuracy in exam-registration related tasks. ",
-        contributors: ["Your Name", "Other Team Members (if any)"],
+        contributors: ["R. N. Viththagan", "Chamod Rashmika", "I. L. Devapriya"],
         githubLink: "https://github.com/RNViththagan/ERS-Web_Technologies",
         src: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
