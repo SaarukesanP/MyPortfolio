@@ -1,5 +1,4 @@
 import { assets } from '@/assets/assets';
-import { icons } from '@/assets/assets';
 import Image from 'next/image';
 import React from 'react';
 import { FlipWords } from "@/components/ui/flip-words";
@@ -8,10 +7,10 @@ const Header2 = () => {
     const words = ["Full-Stack Development", "UI/UX Design", "Graphic Design"];
 
     return (
-        <div className="text-center mx-auto flex flex-col items-center justify-center">
+        <div className="text-center mx-auto flex flex-col items-center justify-center mb-12">
             {/* Profile Image */}
             <div>
-                <Image src={assets.profile_img} alt="Profile" className="rounded-full mb-6 w-40 mt-20" />
+                <Image src={assets.profile_img} alt="Profile" className="rounded-full mb-6 w-40 mt-32" />
             </div>
 
             {/* Name Heading */}
@@ -28,7 +27,7 @@ const Header2 = () => {
             </div>
 
             {/* University Details */}
-            <p className="text-gray-700 text-center font-medium max-w-lg mx-auto">
+            <p className="text-gray-700 px-[12%] text-center font-medium mx-auto">
                 BSc Hons (Computer Science) Undergraduate at University of Jaffna
             </p>
 
@@ -37,7 +36,7 @@ const Header2 = () => {
                 <a
                     href="/p_saarukesan.pdf"
                     download
-                    className="px-10 py-3 mb-3 rounded-full border-blue-800 bg-blue-600 text-white flex shadow-2xl items-center gap-2"
+                    className="px-10 py-3 mb-3 rounded-full border-blue-800 bg-blue-600 text-white flex shadow-xl shadow-blue-600/20 items-center gap-2"
                 >
                     Download My CV
                     <Image src={assets.download_icon} alt="Download" className="w-4" />
@@ -50,7 +49,7 @@ const Header2 = () => {
             </p>
 
             {/* Social Media Links */}
-            <div className="flex items-center gap-6 mt-2 mb-12">
+            <div className="flex items-center gap-6 mt-2">
                 <a href="https://www.instagram.com/saarukesan.p/?__pwa=1">
                     <Image
                         src={assets.instagram}

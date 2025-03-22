@@ -17,7 +17,7 @@ export default function ImageCard({ src, alt, onClick }) {
                     )}
                 />
                 <div className={cn(
-                    "absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0",
+                    "absolute inset-0 bg-gradient-to-t from-blue-950/20 to-transparent opacity-0",
                     "transition-opacity duration-300 group-hover:opacity-100"
                 )}/>
             </div>

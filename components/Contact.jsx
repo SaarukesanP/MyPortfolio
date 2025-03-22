@@ -30,7 +30,7 @@ const Contact = () => {
     };
 
     return (
-        <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20 bg-no-repeat bg-center bg-[length:90%_auto]">
+        <div id="contact" className="w-full px-[12%] scroll-mt-24 bg-no-repeat bg-center bg-[length:90%_auto] mb-12">
             {/* Heading */}
             <h4 className="text-base text-gray-600 text-center max-w-2xl mx-auto animate-fade-in font-grosky mb-2">
                 Connect with me
@@ -78,7 +78,7 @@ const Contact = () => {
                 {/* Submit Button */}
                 <button
                     type="submit"
-                    className="py-3 px-8 w-max flex items-center justify-between shadow-2xl gap-2 bg-blue-600 text-white rounded-full mx-auto transition-transform duration-300 hover:scale-110"
+                    className="py-3 px-8 w-max flex items-center justify-between shadow-xl shadow-blue-600/20 gap-2 bg-blue-600 text-white rounded-full mx-auto transition-transform duration-300 hover:scale-110"
                 >
                     Submit now <Image src={assets.right_arrow_white} alt="" className="w-4" />
                 </button>

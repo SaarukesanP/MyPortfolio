@@ -35,7 +35,7 @@ export default function Home() {
   return (
       <>
           <Navbar2/>
-          <div className='w-full py-10 scroll-mt-20 bg-blue-50'>
+          <div className='w-full scroll-mt-20 bg-blue-50'>
               <Header2/>
               <TimelineDemo/>
               <AppleCardsCarouselDemo/>

@@ -4,6 +4,7 @@ import { IconArrowNarrowLeft, IconArrowNarrowRight, IconX } from "@tabler/icons-
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import {assets} from "@/assets/assets";
 
 export const CarouselContext = createContext({
     onCardClose: () => {},
@@ -75,18 +76,18 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
                     <div
                         className={cn(
                             "flex flex-row justify-start gap-4 pl-4",
-                            "max-w-7xl mx-auto"
+                            "max-w-7xl mx-auto "
                         )}>
                         {items.map((item, index) => (
                             <div
                                 key={"card" + index}
-                                className="last:pr-[5%] md:last:pr-[33%] rounded-3xl">
+                                className="last:pr-[5%] md:last:pr-[33%] rounded-3xl ">
                                 {item}
                             </div>
                         ))}
                     </div>
                 </div>
-                <div className="flex justify-end gap-2 mr-4 md:mr-10">
+                <div className="flex justify-center gap-2 md:mr-10">
                     <button
                         className="relative z-40 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
                         onClick={scrollLeft}
@@ -152,12 +153,12 @@ export const Card = ({ card, index, layout = false }) => {
                             <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
                         </button>
                         <p className="text-base font-medium text-black dark:text-white">
-                            {card.category}
+                            {card.duration}
                         </p>
                         <p className="text-2xl md:text-5xl font-semibold text-neutral-700 mt-4 dark:text-white">
                             {card.title}
                         </p>
-                        <div className="py-10">{card.content}</div>
+                        <div className="py-10">{card.contentComponent}</div>
                     </div>
                 </div>
             )}
@@ -168,12 +169,27 @@ export const Card = ({ card, index, layout = false }) => {
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-950/80 via-blue-700/50 to-transparent z-30 pointer-events-none" />
                 <div className="relative z-40 p-6">
                     <p className="text-white text-sm md:text-base font-medium font-sans text-left">
-                        {card.category}
+                        {card.duration}
                     </p>
                     <p className="text-white text-xl md:text-3xl font-semibold max-w-3xs text-left [text-wrap:balance] font-sans mt-2">
                         {card.title}
                     </p>
                 </div>
+                {/* GitHub Logo (Conditional Rendering) */}
+                {card.githubLink && (
+                    <a
+                        href={card.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute bottom-4 right-4 z-50 w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                    >
+                        <Image
+                            src={assets.github}
+                            alt="GitHub"
+                            className="w-4 cursor-pointer transition-transform duration-300 hover:scale-125"
+                        />
+                    </a>
+                )}
                 <Image
                     src={card.src}
                     alt={card.title}

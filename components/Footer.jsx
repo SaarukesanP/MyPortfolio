@@ -19,7 +19,7 @@ const Footer = ({}) => {
             </div>
 
             {/* Copyright */}
-            <div className="mt-6 border-t border-neutral-300 pt-4">
+            <div className="mt-6 border-t border-neutral-300 pt-4 pb-12">
                 <p className="text-xs sm:text-sm">
                     &copy; {new Date().getFullYear()} Saarukesan. All rights reserved.
                 </p>

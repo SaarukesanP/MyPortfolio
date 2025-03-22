@@ -7,17 +7,17 @@ export function TimelineDemo() {
     const timelineData = [
         {
             title: "From 2021" ,
+            study: "BSc Hons in Computer Science",
             details: [
-                { text: "BSc Hons in Computer Science"},
-                { text: "University of Jaffna"},
+                { text: "University of Jaffna, Sri Lanka"},
                 { text: "CGPA: 3.21/4.00"}
             ]
         },
         {
             title: "2019",
+            study: "G.C.E Advanced Level (Mathematics Stream)",
             details: [
-                { text: "G.C.E Advanced Level (Mathematics Stream)" },
-                { text: "St. Michael's College"},
+                { text: "St/Michael's College, Batticaloa"},
                 { text: "Z-Score: 1.1931"}
             ]
         },
@@ -33,6 +33,7 @@ export function TimelineDemo() {
 
     const formattedData = timelineData.map((item) => ({
         title: item.title,
+        study: item.study,
         content: (
             <div>
                 {item.details.map((detail, index) => (
@@ -45,9 +46,9 @@ export function TimelineDemo() {
     }));
 
     return (
-        <div className="w-full">
+        <div id="education" className="w-full mb-12 scroll-mt-24">
             {/* Title */}
-            <h2 className="text-center text-4xl font-light tracking-tight text-blue-950 mb-4 font-grosky">
+            <h2 className="text-center text-4xl font-light tracking-tight text-blue-950 mb-12 font-grosky">
                 Education
             </h2>
             <Timeline data={formattedData} />

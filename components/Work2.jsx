@@ -71,11 +71,6 @@ export const images = [
         category: 'Flyers',
     },
     {
-        id: '8',
-        src: '/post/8.jpg',
-        category: 'Flyers',
-    },
-    {
         id: '9',
         src: '/post/9.jpg',
         category: 'Flyers',
@@ -101,13 +96,13 @@ export const images = [
         category: 'Flyers',
     },
     {
-        id: '18',
-        src: '/post/18.jpg',
+        id: '22',
+        src: '/post/22.jpg',
         category: 'Flyers',
     },
     {
-        id: '22',
-        src: '/post/22.jpg',
+        id: '18',
+        src: '/post/18.jpg',
         category: 'Flyers',
     },
     {
@@ -210,16 +205,13 @@ export default function PortfolioPage() {
     };
 
     return (
-        <div className="min-h-screen pb-20">
-            {/* Header */}
-            <header className="w-full py-12 px-4 text-center">
-                <h1 className="text-4xl font-light tracking-tight text-blue-950 mb-2 font-grosky">
+        <div id="work" className=" text-center min-h-screen scroll-mt-24">
+                <h1 className="text-4xl font-light tracking-tight text-blue-950 mb-4 font-grosky">
                     Recent Works
                 </h1>
-                <p className="text-base text-gray-600 max-w-2xl mx-auto animate-fade-in font-grosky">
-                    Explore our creative work across different categories. Click on any image to view details.
+                <p className="text-base px-[12%] text-gray-600 mx-auto animate-fade-in font-grosky mb-6">
+                    Explore my creative work across different categories. Click on any image to view.
                 </p>
-            </header>
 
             <main className="container mx-auto px-4">
                 {/* Category Navigation */}
@@ -243,7 +235,7 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* Image Slider */}
-                <div className="mb-12">
+                <div className="">
                     <ImageSlider
                         images={images}
                         category={activeCategory}

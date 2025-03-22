@@ -135,9 +135,9 @@ const design = [
 
 export function AnimatedTooltipPreview() {
     return (
-        <div className="w-full h-full px-[12%] py-10 scroll-mt-20">
+        <div id="skill" className="w-full h-full px-[12%] scroll-mt-24 mb-12">
             {/* Heading */}
-            <h2 id="skill" className="text-center text-4xl font-light tracking-tight text-blue-950 mb-12 font-grosky">
+            <h2 className="text-center text-4xl font-light tracking-tight text-blue-950 mb-12 font-grosky">
                 Skills
             </h2>
 

@@ -61,7 +61,6 @@ import logo_18 from './logo_18.png';
 import logo_19 from './logo_19.png';
 import phone from './phone.png';
 import location from './location.png';
-import hostel from './public/hostel.png';
 import linkedin2 from './linkedin2.png';
 
 
@@ -129,7 +128,6 @@ export const assets = {
     logo_19,
     phone,
     location,
-    hostel,
     linkedin2
 };
 
