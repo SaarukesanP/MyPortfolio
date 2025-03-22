@@ -205,7 +205,7 @@ export default function PortfolioPage() {
     };
 
     return (
-        <div id="work" className=" text-center min-h-screen scroll-mt-24">
+        <div id="work" className=" text-center mb-12 scroll-mt-24">
                 <h1 className="text-4xl font-light tracking-tight text-blue-950 mb-4 font-grosky">
                     Recent Works
                 </h1>
