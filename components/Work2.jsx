@@ -7,7 +7,7 @@ import Image from "next/image";
 import { cn } from '@/lib/utils';
 import { assets } from '@/assets/assets';
 
-export const categories = ['Flyers', 'Logo Design', 'T-shirt Design'];
+export const categories = ['Figma Projects', 'Flyers', 'Logo Design', 'T-shirt Design'];
 
 export const images = [
     {
@@ -184,7 +184,45 @@ export const images = [
         id: '44',
         src: '/post/44.jpg',
         category: 'T-shirt Design',
+    },
+    {
+        id: '45',
+        src: '/post/Figma_1.png',
+        // alt: 'https://www.figma.com/design/uYuVRA8Yk9Cu6bHI4bsVh9/My-Portfolio?node-id=0-1&t=04zXVhGZJAsFCMBG-1',
+        alt: <a
+            href= 'https://www.figma.com/design/uYuVRA8Yk9Cu6bHI4bsVh9/My-Portfolio?node-id=0-1&t=04zXVhGZJAsFCMBG-1'
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-14 right-10 z-50 w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+        >
+            <Image
+                src={assets.figma2}
+                alt="Figma"
+                className="w-6 cursor-pointer transition-transform duration-300 hover:scale-110"
+            />
+        </a>,
+        category: 'Figma Projects',
+    },
+    {
+        id: '46',
+        src: '/post/Figma_2.png',
+        // alt: 'https://www.figma.com/design/02a7vO41oYSnL4yv5P8fnF/My-Space?node-id=0-1&t=sfC8IX6Ih63ga8Kc-1',
+        alt:
+        <a
+            href= 'https://www.figma.com/design/02a7vO41oYSnL4yv5P8fnF/My-Space?node-id=0-1&t=sfC8IX6Ih63ga8Kc-1'
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-14 right-10 z-50 w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+        >
+            <Image
+                src={assets.figma2}
+                alt="Figma"
+                className="w-6 cursor-pointer transition-transform duration-300 hover:scale-110"
+            />
+        </a>,
+        category: 'Figma Projects',
     }
+
 ];
 
 

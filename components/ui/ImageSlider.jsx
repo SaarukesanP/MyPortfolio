@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ImageCard from './ImageCard';
 import { cn } from '@/lib/utils';
+import { categories } from "@/components/Work2";
 
 export default function ImageSlider({ images, category, onImageClick }) {
     const sliderRef = useRef(null);
@@ -45,7 +46,11 @@ export default function ImageSlider({ images, category, onImageClick }) {
                     <div
                         key={image.id}
                         className="flex-none snap-start"
-                        style={{ minWidth: '250px', maxWidth: '250px' }}
+                        style={
+                            category === 'Figma Projects'&&'T-shirt Design'
+                                ? { minWidth: '500px', maxWidth: '500px' }
+                                : { minWidth: '250px', maxWidth: '250px' }
+                        }
                     >
                         <ImageCard
                             src={image.src}
