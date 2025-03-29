@@ -221,6 +221,25 @@ export const images = [
             />
         </a>,
         category: 'Figma Projects',
+    },
+    {
+        id: '47',
+        src: '/post/Figma_3.png',
+        // alt: 'https://www.figma.com/design/02a7vO41oYSnL4yv5P8fnF/My-Space?node-id=0-1&t=sfC8IX6Ih63ga8Kc-1',
+        alt:
+            <a
+                href= 'https://www.figma.com/design/9Bv8AyvsNTjm96B1wLSV8N/Technical-Assessment---Octopus-BI?node-id=1-19&t=Q2BqgV8J4bbZyOQs-1'
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-14 right-10 z-50 w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+            >
+                <Image
+                    src={assets.figma2}
+                    alt="Figma"
+                    className="w-6 cursor-pointer transition-transform duration-300 hover:scale-110"
+                />
+            </a>,
+        category: 'Figma Projects',
     }
 
 ];
