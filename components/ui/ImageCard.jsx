@@ -1,19 +1,22 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-export default function ImageCard({ src, alt, onClick }) {
+export default function ImageCard({ src, alt, onClick, category }) {
     return (
         <div
-            className="image-card rounded-lg shadow-sm cursor-pointer fixed-height-container"
+            className="image-card rounded-lg shadow-sm cursor-pointer w-full h-full"
             onClick={onClick}
         >
-            <div className="h-full w-full relative overflow-hidden rounded-lg group">
+            <div className="h-full w-full relative overflow-hidden rounded-lg group aspect-square">
                 <img
                     src={src}
-                    alt={alt}
+                    alt={typeof alt === 'string' ? alt : ''}
                     className={cn(
-                        "w-auto h-full object-cover transition-all duration-500",
-                        "group-hover:scale-105"
+                        "w-full h-full object-cover transition-all duration-500",
+                        "group-hover:scale-105",
+                        category === 'Figma Projects' || category === 'T-shirt Design'
+                            ? "object-contain"
+                            : "object-cover"
                     )}
                 />
                 <div className={cn(

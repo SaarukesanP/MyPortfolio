@@ -1,11 +1,23 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ImageCard from './ImageCard';
 import { cn } from '@/lib/utils';
-import { categories } from "@/components/Work2";
 
 export default function ImageSlider({ images, category, onImageClick }) {
     const sliderRef = useRef(null);
+    const [windowWidth, setWindowWidth] = useState(0);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        // Set initial width
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const filteredImages = images.filter(
         (image) => image.category.toLowerCase() === category.toLowerCase()
@@ -32,6 +44,21 @@ export default function ImageSlider({ images, category, onImageClick }) {
         );
     }
 
+    // Calculate card width based on screen size and category
+    const getCardWidth = () => {
+        if (windowWidth < 640) { // Mobile
+            return { minWidth: '200px', maxWidth: '200px' };
+        } else if (windowWidth < 1024) { // Tablet
+            return category === 'Figma Projects'
+                ? { minWidth: '250px', maxWidth: '250px' }
+                : { minWidth: '250px', maxWidth: '250px' };
+        } else { // Desktop (including MacBook)
+            return category === 'Figma Projects'
+                ? { minWidth: '300px', maxWidth: '300px' }
+                : { minWidth: '300px', maxWidth: '300px' };
+        }
+    };
+
     return (
         <div className="relative w-full animate-fade-in">
             <div
@@ -46,16 +73,13 @@ export default function ImageSlider({ images, category, onImageClick }) {
                     <div
                         key={image.id}
                         className="flex-none snap-start"
-                        style={
-                            category === 'Figma Projects'&&'T-shirt Design'
-                                ? { minWidth: '500px', maxWidth: '500px' }
-                                : { minWidth: '250px', maxWidth: '250px' }
-                        }
+                        style={getCardWidth()}
                     >
                         <ImageCard
                             src={image.src}
                             alt={image.alt}
                             onClick={() => onImageClick(image)}
+                            category={category}
                         />
                     </div>
                 ))}
@@ -69,7 +93,8 @@ export default function ImageSlider({ images, category, onImageClick }) {
                             "absolute left-2 top-1/2 transform -translate-y-1/2 z-10",
                             "rounded-full p-2 bg-white/80 backdrop-blur-sm",
                             "shadow-md border border-gray-200",
-                            "hover:bg-brand-blue transition-colors duration-200"
+                            "hover:bg-brand-blue transition-colors duration-200",
+                            "hidden sm:block" // Hide on mobile
                         )}
                         aria-label="Scroll left"
                     >
@@ -81,7 +106,8 @@ export default function ImageSlider({ images, category, onImageClick }) {
                             "absolute right-2 top-1/2 transform -translate-y-1/2 z-10",
                             "rounded-full p-2 bg-white/80 backdrop-blur-sm",
                             "shadow-md border border-gray-200",
-                            "hover:bg-brand-blue transition-colors duration-200"
+                            "hover:bg-brand-blue transition-colors duration-200",
+                            "hidden sm:block" // Hide on mobile
                         )}
                         aria-label="Scroll right"
                     >
