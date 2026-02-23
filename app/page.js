@@ -37,10 +37,10 @@ export default function Home() {
           <Navbar2/>
           <div className='w-full scroll-mt-20 bg-blue-50'>
               <Header2/>
+              <AnimatedTooltipPreview/>
               <TimelineDemo/>
               <AppleCardsCarouselDemo/>
               <PortfolioPage/>
-              <AnimatedTooltipPreview/>
               <Contact/>
               <Footer/>
           </div>
